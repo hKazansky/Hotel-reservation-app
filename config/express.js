@@ -1,6 +1,6 @@
 const express = require('express');
 const hbs = require('express-handlebars');
-// const authMiddleware = require('./../services/authService.js');
+const authMiddleware = require('./../services/authService.js');
 const cookieParser = require('cookie-parser');
 module.exports = (app) => {
 
@@ -14,4 +14,5 @@ module.exports = (app) => {
 
     app.use('/static', express.static('static'));
     app.use(cookieParser());
+    app.use(authMiddleware());
 }
