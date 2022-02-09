@@ -1,4 +1,4 @@
-# Hotel-reservation-app
+# Hotel-reservation-app with express.js
 
 An app that allows you to:
 
