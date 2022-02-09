@@ -74,7 +74,6 @@ router.get('/profile', isUser, async (req, res) => {
     const nameOfEachHotel = [];
     let promiseHotels = currentUser.bookedHotels.map(el => el.valueOf()).map(x => getHotelById(x));
     (await Promise.all(promiseHotels)).forEach(x => nameOfEachHotel.push(x.hotelName));
-    // console.log(nameOfEachHotel);
 
     const ctx = {
         title: 'Profile',
@@ -86,7 +85,6 @@ router.get('/profile', isUser, async (req, res) => {
         }
     }
     res.render('user/profile', ctx);
-
 });
 
 module.exports = router;
